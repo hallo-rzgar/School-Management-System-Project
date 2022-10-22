@@ -114,11 +114,11 @@
             <a href="#"
                class="navbar-nav-link navbar-nav-link-toggler dropdown-toggle d-inline-flex align-items-center h-100"
                data-toggle="dropdown">
-                <img src="{{asset('global_assets/images/placeholders/placeholder.jpg')}}" class="rounded-pill mr-lg-2"
+                <img src="{{ Auth::user()->profile_photo_url }}" class="rounded-pill mr-lg-2"
                      height="34" alt="">
-                <span class="d-none d-lg-inline-block">{{ Auth::user()->currentTeam }}</span>
-            </a>
+                <span class="d-none d-lg-inline-block">{{ Auth::user()->name }}</span>
 
+            </a>
             <div class="dropdown-menu dropdown-menu-right">
                 <a href="#" class="dropdown-item"><i class="icon-user-plus"></i> My profile</a>
                 <a href="#" class="dropdown-item"><i class="icon-coins"></i> My balance</a>

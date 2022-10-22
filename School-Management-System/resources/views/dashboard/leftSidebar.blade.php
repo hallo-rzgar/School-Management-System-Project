@@ -57,9 +57,9 @@
                     <a href="#" class="nav-link"><i class="icon-user"></i> <span>Manage User</span></a>
 
                     <ul class="nav nav-group-sub" data-submenu-title="Layouts">
-                        <li class="nav-item"><a   class="nav-link">Add user</a></li>
+                        <li class="nav-item"><a   href="{{route('user.add')}}"  class="nav-link">Add user</a></li>
                         <li class="nav-item"><a href="{{route('user.view')}}"  class="nav-link">View user</a></li>
-                    </ul>
+                     </ul>
                 </li>
                 <!-- /main -->
 
