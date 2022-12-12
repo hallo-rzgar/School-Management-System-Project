@@ -1,3 +1,8 @@
+@php
+$prefix=\Illuminate\Support\Facades\Request::route()->getPrefix();
+$route = \Illuminate\Support\Facades\Route::current()->getName();
+
+@endphp
 <!-- Main sidebar -->
 <div class="sidebar sidebar-dark sidebar-main sidebar-expand-lg">
 
@@ -46,23 +51,41 @@
                     <div class="text-uppercase font-size-xs line-height-xs">Main</div>
                     <i class="icon-menu" title="Main"></i></li>
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link">
+                    <a href="index.html" class="nav-link {{($prefix=='/dashboard')?'active':''}}">
                         <i class="icon-home4"></i>
                         <span>
 									Dashboard
 								</span>
                     </a>
                 </li>
-                <li class="nav-item nav-item-submenu">
-                    <a href="#" class="nav-link"><i class="icon-user"></i> <span>Manage User</span></a>
+                <li class="nav-item nav-item-submenu" >
+                    <a href="#" class="nav-link {{($prefix=='users')?'active':''}}"><i class="icon-user"></i> <span>Manage User</span></a>
 
                     <ul class="nav nav-group-sub" data-submenu-title="Layouts">
-                        <li class="nav-item"><a   href="{{route('user.add')}}"  class="nav-link">Add user</a></li>
-                        <li class="nav-item"><a href="{{route('user.view')}}"  class="nav-link">View user</a></li>
+                        <li class="nav-item "><a   href="{{route('user.add')}}"  class="nav-link {{($route=='user.add')?'active':''}}">Add user</a></li>
+                        <li class="nav-item"><a href="{{route('user.view')}}"  class="nav-link {{($route=='user.view')?'active':''}}">View user</a></li>
                      </ul>
                 </li>
                 <!-- /main -->
 
+                <!-- setup -->
+                <li class="nav-item-header">
+                    <div class="text-uppercase font-size-xs line-height-xs">Setup</div>
+                    <i class="icon-menu" title="Forms"></i></li>
+                <li class="nav-item nav-item-submenu">
+                    <a href="#" class="nav-link {{($prefix=='setups')?'active':''}} "><i class="icon-pencil3"></i> <span>Setup Management</span></a>
+                    <ul class="nav nav-group-sub" data-submenu-title="Form components">
+                        <li class="nav-item"><a href="{{route('student.class.view')}}"  class="nav-link {{($route=='student.class.view')?'active':''}}">Student Class</a></li>
+                        <li class="nav-item"><a href="{{route('student.year.view')}}"  class="nav-link {{($route=='student.year.view')?'active':''}}">Student Year</a></li>
+                        <li class="nav-item"><a href="{{route('student.group.view')}}"  class="nav-link {{($route=='student.group.view')?'active':''}}">Student Group</a></li>
+                        <li class="nav-item"><a href="{{route('student.shift.view')}}"  class="nav-link {{($route=='student.shift.view')?'active':''}}">Student Shift</a></li>
+                        <li class="nav-item"><a href="{{route('student.fee_category.view')}}"  class="nav-link {{($route=='student.fee_category.view')?'active':''}}">Student Fee Category</a></li>
+                        <li class="nav-item"><a href="{{route('student.amount.view')}}"  class="nav-link {{($route=='student.amount.view')?'active':''}}">Student Fee  Amount</a></li>
+
+                    </ul>
+                </li>
+
+                <!-- /setup -->
                 <!-- Forms -->
                 <li class="nav-item-header">
                     <div class="text-uppercase font-size-xs line-height-xs">Forms</div>

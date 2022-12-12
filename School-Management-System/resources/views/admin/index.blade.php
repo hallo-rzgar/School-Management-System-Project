@@ -1,6 +1,8 @@
 @extends('admin.master_admin')
 @section('admin')
-
+@section('title')
+    Dashboard
+@endsection
     <!-- Content area -->
     <div class="content">
 
